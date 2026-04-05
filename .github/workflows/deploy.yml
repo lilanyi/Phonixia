@@ -21,8 +21,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          submodules: true
+          fetch-depth: 1
+          sparse-checkout: |
+            themes/PaperMod
+            content
+            layouts
+            static
+            hugo.yaml
+            archetypes
+
+      - name: Checkout submodules
+        run: |
+          git submodule update --init --recursive
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
