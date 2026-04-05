@@ -1,0 +1,29 @@
+{{/* Callout shortcode for notes/warnings */}}
+{{ $type := .Get "type" | default "info" }}
+{{ $title := "" }}
+{{ $icon := "" }}
+{{ $color := "" }}
+
+{{ if eq $type "warning" }}
+  {{ $title = "注意" }}
+  {{ $icon = "⚠️" }}
+  {{ $color = "#f59e0b" }}
+{{ else if eq $type "danger" }}
+  {{ $title = "警告" }}
+  {{ $icon = "🚫" }}
+  {{ $color = "#ef4444" }}
+{{ else }}
+  {{ $title = "提示" }}
+  {{ $icon = "💡" }}
+  {{ $color = "#3b82f6" }}
+{{ end }}
+
+<div style="background: linear-gradient(to right, {{ $color }}10, transparent); border-left: 4px solid {{ $color }}; padding: 1rem; margin: 1rem 0; border-radius: 0 0.5rem 0.5rem 0;">
+  <div style="display: flex; align-items: start; gap: 0.5rem;">
+    <span style="font-size: 1.2rem;">{{ $icon }}</span>
+    <div>
+      <strong style="color: {{ $color }};">{{ $title }}</strong>
+      <div>{{ .Inner | markdownify }}</div>
+    </div>
+  </div>
+</div>

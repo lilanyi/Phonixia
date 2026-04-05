@@ -1,0 +1,114 @@
+baseURL: https://hrt-knowledge-base.pages.dev/  # Cloudflare Pages 默认域名
+languageCode: zh-cn
+defaultContentLanguage: zh-cn
+title: MTF HRT 知识库
+theme: PaperMod
+
+# 启用中文支持
+hasCJKLanguage: true
+summaryLength: 100
+
+# 导航菜单
+menu:
+  main:
+    - name: 首页
+      url: /
+      weight: 1
+    - name: 基础知识
+      url: /basics/
+      weight: 2
+    - name: 发育指南
+      url: /development/
+      weight: 3
+    - name: 用药方案
+      url: /regimens/
+      weight: 4
+    - name: 安全警示
+      url: /safety/
+      weight: 5
+    - name: 资源
+      url: /resources/
+      weight: 6
+
+# PaperMod 主题配置
+params:
+  # 网站信息
+  description: "跨性别女性激素替代治疗（HRT）中文知识库 - 基于社区经验和医学研究"
+  author: "Nova AI"
+  
+  # 显示目录
+  ShowToc: true
+  TocOpen: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  
+  # 首页模式
+  homeInfoParams:
+    Title: "MTF HRT 知识库"
+    Content: |
+      欢迎！这是一个关于**跨性别女性激素替代治疗（HRT）**的中文知识库。
+      
+      - 📚 基于社区经验和医学研究
+      - 🔬 涵盖乳房发育、脂肪分布、给药方式等
+      - ⚠️ 仅供参考，不构成医疗建议
+      
+      👇 从**基础知识**开始阅读
+
+  # 社交链接（预留）
+  socialIcons:
+    - name: github
+      url: "https://github.com/"
+
+  # 编辑链接（预留动态化）
+  editPost:
+    URL: "https://github.com/your-repo/hrt-knowledge-base/edit/main/content/"
+    Text: "编辑此页"
+    appendFilePath: true
+
+  # 搜索功能
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# 输出格式
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # 用于搜索
+
+# Markdown 配置
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # 允许 HTML
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai
+
+# 隐私配置（GDPR 友好）
+privacy:
+  vimeo:
+    disabled: false
+    simple: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+# 评论系统配置（预留 Giscus）
+# giscus:
+#   repo: "your-repo/hrt-knowledge-base"
+#   repoId: ""
+#   category: "Announcements"
+#   categoryId: ""
+#   mapping: "pathname"
+#   reactionsEnabled: "1"
+#   emitMetadata: "0"
