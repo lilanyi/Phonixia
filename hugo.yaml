@@ -62,7 +62,7 @@ params:
 
   # 编辑链接（预留动态化）
   editPost:
-    URL: "https://github.com/your-repo/hrt-knowledge-base/edit/main/content/"
+    URL: "https://github.com/lilanyi/Phonixia/edit/main/content/"
     Text: "编辑此页"
     appendFilePath: true
 
